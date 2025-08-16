@@ -73,15 +73,48 @@ h1,h2{margin:.2rem 0}
 .card .save{display:inline-block;padding:.5rem .7rem;border:none;border-radius:10px;background:linear-gradient(135deg,var(--accent1),var(--accent2));color:white;cursor:pointer}
 .card .read:hover, .link:hover{transform:translateY(-1px)}
 /* Reader */
-.reader{width:min(900px,92vw);border:none;border-radius:16px; padding:0; background:var(--card); color:var(--text)}
-.reader__chrome{position:sticky;top:0;background:linear-gradient(180deg, rgba(0,0,0,.25), transparent);padding:1rem;border-bottom:1px solid var(--border);display:flex;align-items:center;justify-content:space-between;gap:1rem}
+.reader{
+  width:min(900px,92vw);
+  border:none;
+  border-radius:16px;
+  padding:0;
+  background:var(--card);
+  color:var(--text)
+}
+.reader__chrome{
+  position:sticky;
+  top:0;
+  background:linear-gradient(180deg, rgba(0,0,0,.25), transparent);
+  padding:1rem;
+  border-bottom:1px solid var(--border);
+  display:flex;
+  align-items:center;
+  justify-content:space-between;
+  gap:1rem
+}
 .reader__left{display:flex;align-items:center;gap:.6rem}
 .reader__right{display:flex;align-items:center;gap:.6rem}
 #fontSize{accent-color:#7c3aed}
 .progress{height:4px;background:rgba(255,255,255,.15);border-radius:999px;overflow:hidden;margin-top:.5rem}
 .progress>div{height:100%;width:0%;background:linear-gradient(90deg,var(--accent1),var(--accent2))}
-#readerContent{padding:1.2rem 1.2rem 2rem;max-height:70vh;overflow:auto}
+
+/* 📖 تعديل خلفية النص */
+#readerContent{
+  background: rgba(0, 0, 0, 0.4); /* خلفية شفافة غامقة في الوضع الليلي */
+  border-radius: 12px;
+  padding: 1.5rem;
+  line-height: 1.8;
+  max-height:70vh;
+  overflow:auto
+}
 #readerContent p{margin:0 0 1rem}
+
+/* 📖 خلفية فاتحة عند الوضع النهاري */
+:root.light #readerContent{
+  background: rgba(255, 255, 255, 0.9);
+  color:#0f172a;
+}
+
 /* Footer */
 .footer{display:flex;justify-content:space-between;align-items:center;gap:1rem;margin:2rem auto;color:var(--subtext)}
 /* small screens */
