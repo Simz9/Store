@@ -1,0 +1,74 @@
+<!DOCTYPE html>
+<html lang="ar" dir="rtl">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>مكتبة القصص | للأطفال والرعب</title>
+  <meta name="description" content="مكتبة قصص عربية: قصص أطفال وقصص رعب، بتصميم جميل وسهل الاستخدام."/>
+  <link rel="stylesheet" href="style.css" />
+  <link rel="icon" href="data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 128 128'><rect width='128' height='128' rx='16' fill='%230a0a0a'/><path d='M24 32h80v64l-18-10-22 12-22-12-18 10z' fill='%23fff'/></svg>">
+</head>
+<body>
+  <header class="hero">
+    <div class="hero__inner container">
+      <div class="brand">
+        <svg viewBox="0 0 64 64" aria-hidden="true" class="logo">
+          <defs>
+            <linearGradient id="g" x1="0" y1="0" x2="1" y2="1">
+              <stop offset="0" stop-color="#7c3aed"/>
+              <stop offset="1" stop-color="#06b6d4"/>
+            </linearGradient>
+          </defs>
+          <path fill="url(#g)" d="M8 16h48v32L44 40 32 48 20 40 8 48z"/>
+        </svg>
+        <div>
+          <h1>مكتبة القصص</h1>
+          <p class="subtitle">قصص أطفال وقصص رعب — قراءة ممتعة للجميع</p>
+        </div>
+      </div>
+
+      <div class="controls">
+        <input id="search" class="input" type="search" placeholder="ابحث عن قصة..." aria-label="بحث" />
+        <button id="themeToggle" class="btn icon" title="تبديل الوضع">
+          <span class="material">☾</span>
+        </button>
+      </div>
+
+      <nav class="tabs" role="tablist" aria-label="تصنيفات القصص">
+        <button class="tab active" data-filter="all" role="tab" aria-selected="true">الكل</button>
+        <button class="tab" data-filter="children" role="tab" aria-selected="false">قصص أطفال</button>
+        <button class="tab" data-filter="horror" role="tab" aria-selected="false">قصص رعب</button>
+        <button class="tab" data-filter="bookmarked" role="tab" aria-selected="false">المحفوظة</button>
+      </nav>
+    </div>
+  </header>
+
+  <main class="container">
+    <section id="grid" class="grid" aria-live="polite"></section>
+  </main>
+
+  <dialog id="reader" class="reader" aria-labelledby="readerTitle">
+    <form method="dialog" class="reader__chrome">
+      <div class="reader__left">
+        <h2 id="readerTitle"></h2>
+        <span class="badge" id="readerCategory"></span>
+      </div>
+      <div class="reader__right">
+        <label for="fontSize" class="sr-only">حجم الخط</label>
+        <input id="fontSize" type="range" min="16" max="28" value="20" />
+        <button type="button" id="bookmarkBtn" class="btn">حفظ</button>
+        <button type="submit" class="btn outline">إغلاق</button>
+      </div>
+      <div class="progress" id="progress"><div></div></div>
+    </form>
+    <article id="readerContent"></article>
+  </dialog>
+
+  <footer class="footer container">
+    <p>© <span id="year"></span> مكتبة القصص — مشروع غير ربحي.</p>
+    <a href="#" id="exportBookmarks" class="link">تصدير القصص المحفوظة</a>
+  </footer>
+
+  <script src="app.js"></script>
+</body>
+</html>
