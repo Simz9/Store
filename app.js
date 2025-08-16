@@ -42,7 +42,7 @@ function render(){
   const term = state.search.trim();
   let list = state.stories;
 
-  if(state.filter === 'children') list = list.filter(s => s.category === 'children');
+  if(state.filter === 'psychology') list = list.filter(s => s.category === 'psychology');
   else if(state.filter === 'horror') list = list.filter(s => s.category === 'horror');
   else if(state.filter === 'bookmarked') list = list.filter(s => state.bookmarks.includes(s.id));
 
@@ -64,7 +64,7 @@ function render(){
     card.innerHTML = `
       <div class="title">${s.title}</div>
       <div class="meta">
-        <span class="badge">${s.category === 'children' ? 'أطفال' : 'رعب'}</span>
+        <span class="badge">${s.category === 'psychology' ? 'علم النفس' : 'رعب'}</span>
         <span class="badge">${s.length} دقيقة قراءة</span>
       </div>
       <p>${s.summary}</p>
@@ -89,7 +89,7 @@ function openReader(id){
   const story = state.stories.find(s => s.id === id);
   if(!story) return;
   readerTitle.textContent = story.title;
-  readerCategory.textContent = story.category === 'children' ? 'أطفال' : 'رعب';
+  readerCategory.textContent = story.category === 'psychology' ? 'علم النفس' : 'رعب';
   readerContent.innerHTML = story.body.split('\n').map(p => `<p>${p}</p>`).join('');
   reader.showModal();
   readerContent.scrollTop = 0;
