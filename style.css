@@ -99,20 +99,22 @@ h1,h2{margin:.2rem 0}
 .progress>div{height:100%;width:0%;background:linear-gradient(90deg,var(--accent1),var(--accent2))}
 
 /* 📖 تعديل خلفية النص */
-#readerContent{
-  background: rgba(0, 0, 0, 0.4); /* خلفية شفافة غامقة في الوضع الليلي */
+/* خلفية النص في الوضع الليلي */
+:root:not(.light) #readerContent {
+  background: rgba(0, 0, 0, 0.4);
   border-radius: 12px;
   padding: 1.5rem;
   line-height: 1.8;
-  max-height:70vh;
-  overflow:auto
+  color: #f8fafc;
 }
-#readerContent p{margin:0 0 1rem}
 
-/* 📖 خلفية فاتحة عند الوضع النهاري */
-:root.light #readerContent{
+/* خلفية النص في الوضع النهاري */
+:root.light #readerContent {
   background: rgba(255, 255, 255, 0.9);
-  color:#0f172a;
+  border-radius: 12px;
+  padding: 1.5rem;
+  line-height: 1.8;
+  color: #0f172a;
 }
 
 /* Footer */
